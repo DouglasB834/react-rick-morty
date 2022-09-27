@@ -1,6 +1,11 @@
 import styled from "styled-components"
 
 
+
+export const DivStyle  = styled.div`
+height: 100vh;
+`
+
 export const TagUl = styled.ul`
 display: flex;
 flex-wrap: wrap;
