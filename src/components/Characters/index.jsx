@@ -1,24 +1,14 @@
 import React from 'react'
-import { TagH2, TagUl } from './style';
+import CharCard from '../CharCard';
+import { TagUl } from './style';
 
 function Characters({characterList}) {
   const arr = characterList;
-  console.log(arr)
   return (
     <div>
         <TagUl>
           {
-            arr.map((elem) => {                
-                 return <li key={elem.id}>
-                  <img src={elem.image} alt={elem.name} />
-
-                    <TagH2 fontSize={"one"} >nome {elem.name}</TagH2  >  
-                    <div>
-                      <span>Specie {elem.species}</span>
-                      <span> gender{elem.gender} </span>
-                    </div>              
-                  </li>
-              } )
+            arr.map((elem) => <CharCard key={elem.id} elem={elem}/>  )
           }
         </TagUl>
       </div>
