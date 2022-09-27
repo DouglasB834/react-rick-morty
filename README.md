@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+repositorio https://github.com/Kenzie-Academy-Brasil-Developers/react-atividade-s1-buscando-dados-na-api-rick-and-morty-douglasb834-16
+
 ## Available Scripts
 
 In the project directory, you can run:

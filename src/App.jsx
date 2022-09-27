@@ -7,38 +7,38 @@ import "./App.css";
 import Main from "./components/Main";
 import instance  from "./components/Axios/instance";
 import Characters from "./components/Characters";
-import CharCard from "./components/CharCard";
-function App() {
-  
-  
-  
-  //  const  baseUrl="https://rickandmortyapi.com/api/character/"
-  //  useEffect(()=>{
-    //     axios.get(`${baseUrl}`)
-    //     .then( res => setCharacterList (res.data.results))
-    //     .catch(error => console.log(error))
-    
-    //   },[])
-    
-    //   console.log(characterList)
-    
+import Homepage from "./components/Homepage";
+
+
+function App() {    
     const [characterList, setCharacterList] = useState([]);
+    const [changePage, SetChangePage] =useState(true)
+
+
   useEffect(() => {
     instance.get(`/character`)
-      .then(({data} ) =>  {setCharacterList(data.results)}
-      )
+      .then(({data} ) =>  {
+        setCharacterList(data.results)
+      })
       .catch((error) => console.log(error));
   }, []);
-  console.log(characterList)
+  
+
   return (
-    <div className="App">
-      <Main>
-        <h1>Personagens Rick Morty</h1>
-        <Characters characterList={characterList}>
-        <CharCard/>
-        </Characters>
     
-      </Main>
+    <div className="App">
+      {changePage ?(
+        <Main setCharacterList={setCharacterList}>
+        <Characters characterList={characterList} /> 
+         
+      </Main>       
+      ):
+      (
+        <Homepage/>
+        
+      )
+  }
+
     </div>
   );
 }

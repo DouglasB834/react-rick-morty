@@ -1,12 +1,22 @@
 
-import React from 'react'
+import { TagH2, TagLi } from "./style"
 
-function CharCard
-() {
+
+function CharCard({elem}) {
   return (
-    <div>
-      
-    </div>
+    <TagLi elem={elem}>
+
+    <img src={elem.image} alt={elem.name} />
+
+      <TagH2 fontSize={"one"} >{elem.name}</TagH2  >  
+      <div>
+        <p className="title">Specie<span className="text">{elem.species}</span></p>
+        <span> gender {elem.gender} </span>
+      </div>    
+               
+    </TagLi>
+    
+   
   )
 }
 
