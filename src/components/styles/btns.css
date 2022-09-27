@@ -1,0 +1,14 @@
+
+
+.btnBasic{
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnBasic.form{
+    background-color: var(--primary-color);
+
+}
