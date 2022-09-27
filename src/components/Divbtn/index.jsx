@@ -1,46 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { DivStyle } from './style'
 import {GrCaretPrevious, GrCaretNext } from "react-icons/gr";
-import instance from '../Axios/instance';
+
+import { DataContext } from '../Context/dataContext';
 
 
-const Divbtn =({setCharacterList})=> {
+const Divbtn =()=> {
+  const [pages, setPages] = useContext(DataContext)
 
-    const [pages, SetPages] = useState(1)
-  
-    const trocarPagina =(parametro)=>{
-
-      if(parametro && pages >0){
-        console.log(pages)
-        instance.get(`/character/?page=${pages}`)
-        .then(({data}) => {
-            setCharacterList(data.results)
-        })
-        
-      }else{
-        console.log(pages)
-        instance.get(`/character/?page=${pages}`)
-        .then(({data}) => {
-            setCharacterList(data.results)
-        })
-      }
-
-
-    }
-
-
-
+ 
   return (
     <DivStyle>
         <GrCaretPrevious onClick={() =>{
-          SetPages((oldPage)=> oldPage >1 ? oldPage-1: oldPage)
-          trocarPagina(true)}} />
-
-        <GrCaretNext onClick={()=> {SetPages((oldPage)=> oldPage+1)
-          trocarPagina(false)}} />
+          setPages(()=> pages > 1 ? pages-1: pages+41) }} />
+          <span>{pages}</span>
+        <GrCaretNext onClick={()=> {setPages(()=> pages <42 ? pages+1 : pages-41)}} />
       
     </DivStyle>
   )
+  
 }
 
 export default Divbtn

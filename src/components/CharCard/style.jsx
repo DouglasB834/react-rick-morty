@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-
+import 'animate.css';
 export const TagLi = styled.li`
 
 gap: 1rem;

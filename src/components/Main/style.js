@@ -27,7 +27,7 @@ svg polygon:hover{
 export const TagImg = styled.img`
 width: 65%;
 border-bottom: solid 1px #2ecc71;
-animation: backInLeft; 
-animation-duration: .2s linear;
+/* animation: backInLeft;  */
+animation-duration: .8s ;
 
 `

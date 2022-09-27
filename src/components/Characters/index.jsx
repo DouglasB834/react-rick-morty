@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CharCard from '../CharCard';
-import { TagUl } from './style';
+import { DataContext } from '../Context/dataContext';
+import { DivStyle, TagUl } from './style';
 
-function Characters({characterList}) {
-  const arr = characterList;
+function Characters() {
+ 
+  const [, ,characterList] = useContext(DataContext)
   return (
-    <div>
+    <DivStyle>
         <TagUl>
           {
-            arr.map((elem) => <CharCard key={elem.id} elem={elem}/>  )
+            characterList.map((elem) => <CharCard key={elem.id} elem={elem}/>  )
           }
         </TagUl>
-      </div>
+      </DivStyle>
   )
 }
 
