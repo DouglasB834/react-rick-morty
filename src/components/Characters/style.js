@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 
 export const DivStyle  = styled.div`
-height: 100vh;
+height: 100%;
 `
 
 export const TagUl = styled.ul`

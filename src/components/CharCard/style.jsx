@@ -4,6 +4,7 @@ export const TagLi = styled.li`
 
 gap: 1rem;
 width: 30%;
+max-width: 318px;
 display: flex;
 padding: 1rem;
 min-width: 130px;
@@ -21,6 +22,10 @@ img{
 
 h2{
     text-align: center;
+    width: 124px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 div{

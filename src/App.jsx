@@ -15,12 +15,13 @@ function App() {
     const [characterList, setCharacterList] = useState([]);
     const [changePage, SetChangePage] =useState(true)
     const [pages, SetPages] = useState(1)
-    
+    const [cont, setCont] = useState()
     
   useEffect(() => {
     instance.get(`/character/?page=${pages}`)
     .then(({data}) => {
         setCharacterList(data.results)
+        setCont(data.info.pages)
     }) 
       .catch((error) => console.log(error));
   }, [pages]);
@@ -31,7 +32,7 @@ function App() {
   return (
     
     <div className="App">
-      <DataContext.Provider value={[pages, SetPages, characterList, setCharacterList]}>
+      <DataContext.Provider value={[pages, SetPages, characterList, setCharacterList,cont]}>
 
       {changePage ?(
       <Main >

@@ -7,8 +7,8 @@ function CharCard({elem}) {
 
       <TagH2 fontSize={"one"} >{elem.name}</TagH2  >  
       <div>
-        <p className="title">Specie<span className="text">{elem.species}</span></p>
-        <span> gender {elem.gender} </span>
+        <p className="title">Specie <span className="text">{elem.species}</span></p>
+        <span className="title2"> gender {elem.gender} </span>
       </div>   
                
     </TagLi>
